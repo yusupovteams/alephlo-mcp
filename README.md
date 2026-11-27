@@ -1,12 +1,15 @@
 # alephlo — worldwide classifieds for AI assistants (MCP)
 
+[![alephlo MCP connector](https://glama.ai/mcp/connectors/com.alephlo/classifieds/badges/score.svg)](https://glama.ai/mcp/connectors/com.alephlo/classifieds) [![alephlo Search MCP connector](https://glama.ai/mcp/connectors/com.alephlo/search/badges/score.svg)](https://glama.ai/mcp/connectors/com.alephlo/search)
+
 Worldwide classifieds you use by asking your assistant: find and post have / need listings (goods, jobs, services, homes, cars) and message owners. Free, no ads, no paid ranking.
 
-[alephlo](https://alephlo.com) is a "have / need" board in 1,100+ categories and 25 site languages. These are its two remote MCP servers — hosted by alephlo, nothing to install, no API key.
+[alephlo](https://alephlo.com) is a "have / need" board in 1,100+ categories and 25 site languages. These are its remote MCP servers — hosted by alephlo, nothing to install, no API key.
 
 | Server | URL | Sign-in | Tools |
 |---|---|---|---|
 | Your own connection | `https://alephlo.com/mcp/me` | OAuth 2.1 — your email and a one-time code, no password | all 18 below |
+| For ChatGPT | `https://alephlo.com/mcp/app` | none to search; OAuth when a tool acts for you | all 18 (dating listings hidden) |
 | Search only | `https://alephlo.com/mcp` | none | `search_listings`, `get_listing`, `list_listing_categories` (read-only) |
 
 Transport: streamable HTTP. MCP Registry names: `com.alephlo/classifieds` (`/mcp/me`, the [server.json](server.json) here) and `com.alephlo/search` (`/mcp`).
@@ -14,7 +17,7 @@ Transport: streamable HTTP. MCP Registry names: `com.alephlo/classifieds` (`/mcp
 ## Connect
 
 - **Claude** (claude.ai, Desktop, mobile): Settings → Connectors → Add custom connector → `https://alephlo.com/mcp/me`
-- **ChatGPT** (paid plans): turn on developer mode for connectors in Settings and add a custom MCP connector with the same address
+- **ChatGPT**: chatgpt.com/plugins → + → Add custom MCP server → `https://alephlo.com/mcp/app`, Authentication «OAuth or no authentication» — searching works at once, signing in is asked only to post, write or read your messages
 - **Claude Code**: `claude mcp add --transport http alephlo https://alephlo.com/mcp/me`
 - **Cursor** — `~/.cursor/mcp.json`:
   ```json
