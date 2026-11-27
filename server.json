@@ -1,0 +1,9 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.alephlo/classifieds",
+  "title": "alephlo — worldwide classifieds",
+  "description": "Post, search and answer 'have / need' listings worldwide, in 25 languages. Sign in with email.",
+  "version": "0.2.0",
+  "websiteUrl": "https://alephlo.com",
+  "remotes": [{ "type": "streamable-http", "url": "https://alephlo.com/mcp/me" }]
+}
